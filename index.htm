@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brad Woltz Delivery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">Brad Woltz Delivery</a>
+            </div>
+            <div class="menu-toggle">☰</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Fast, Reliable, and Safe Delivery Services</h1>
+            <p>We deliver your goods <br> to any location on time,<br> every time.</p>
+            <a href="info.html" class="cta-btn">Submit Delivery Information</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about-us" class="about-us">
+        <h2>Why Choose Us?</h2>
+        <p>We offer fast delivery, nationwide coverage, secure packaging, and real-time tracking.</p>
+        <div class="features">
+            <div class="feature">
+                <h3>Fast Delivery</h3>
+            </div>
+            <div class="feature">
+                <h3>Nationwide Coverage</h3>
+            </div>
+            <div class="feature">
+                <h3>Secure Packaging</h3>
+            </div>
+            <div class="feature">
+                <h3>Real-time Tracking</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-boxes">
+            <div class="service-box">
+                <h3>Same Day Delivery</h3>
+                <p>Get your package delivered within the same day.</p>
+            </div>
+            <div class="service-box">
+                <h3>International Shipping</h>
+                <p>We ship packages worldwide with reliable partners.</p>
+            </div>
+            <div class="service-box">
+                <h3>eCommerce Solutions</h3>
+                <p>Seamless integration for online store deliveries.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <h3>Place Your Order</h3>
+                <p>Easily book your delivery online or via our app.</p>
+            </div>
+            <div class="step">
+                <h3>We Pick Up</h>
+                <p>Our team collects the package from your location.</p>
+            </div>
+            <div class="step">
+                <h3>Track Your Package</h3>
+                <p>Real-time tracking so you know where your package is at all times.</p>
+            </div>
+            <div class="step">
+                <h3>Delivered on Time</h3>
+                <p>We ensure your package reaches its destination on time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial">
+            <p>"The delivery was quick and the service was excellent. Highly recommend!"</p>
+            <h4>- John Doe</h4>
+        </div>
+        <div class="testimonial">
+            <p>"My package arrived safely and on time. Great experience!"</p>
+            <h4>- Jane Smith</h4>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="cta" class="cta">
+        <h2>Ready to Ship?</h2>
+        <p>Get started with the most reliable delivery service today.</p>
+        <a href="#contact" class="cta-btn">Sign Up Now</a>
+        <a href="#contact" class="cta-btn">Contact Us</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <form>
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="tel" placeholder="Phone" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="contact-details">
+            <p><strong>Address:</strong> 3892 Scottsville Rd Scottsville North Dakota</p>
+            <p><strong>Phone Number:</strong>(585) 889-2550</p>
+            <p><strong>Email:</strong> bradwoltz062@gmail.com</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Brad Woltz Delivery Company. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
